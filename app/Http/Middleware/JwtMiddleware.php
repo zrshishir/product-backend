@@ -24,7 +24,7 @@ class JwtMiddleware
             if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
                 return response()->json(['error' => 1,'statusCode' => 401, 'message' => 'Token is Invalid', 'data' => ""]);
             }else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){
-                return response()->json(['error' => 1,'statusCode' => 401, 'message' => 'Token is Expired', 'data' => ""]);
+                return response()->json(['error' => 1,'statusCode' => 401, 'message' => 'Token is Expired, please log in', 'data' => ""]);
             }else{
                 return response()->json(['error' => 1,'statusCode' => 401, 'message' =>'Authorization Token not found', 'data' => ""]);
             }

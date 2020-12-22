@@ -10,5 +10,9 @@ class Product extends Model
     use HasFactory;
 
     protected $table = "products";
-    protected $fillable = ["title", "descripiton", "price", "image"];
+    protected $fillable = ["user_id", "title", "description", "price", "image"];
+
+    public function user(){
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
 }

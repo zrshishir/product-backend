@@ -17,7 +17,7 @@ class AuthController extends Controller
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 1, 'statusCode' => 400, 'message' => 'OOps, The email or password does not match.', 'data' => ""]);
+                return response()->json(['error' => 1, 'statusCode' => 401, 'message' => 'OOps, The email or password does not match.', 'data' => ""]);
             }
         } catch (JWTException $e) {
             return response()->json(['error' => 1, 'statusCode' => 500, 'message' => 'OOps, can not create token. Something went wrong.', 'data' => ""]);
