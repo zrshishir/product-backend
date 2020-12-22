@@ -22,11 +22,11 @@ class JwtMiddleware
             $user = JWTAuth::parseToken()->authenticate();
         } catch (Exception $e) {
             if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
-                return response()->json(['status' => 'Token is Invalid']);
+                return response()->json(['error' => 1,'statusCode' => 401, 'message' => 'Token is Invalid', 'data' => ""]);
             }else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){
-                return response()->json(['status' => 'Token is Expired']);
+                return response()->json(['error' => 1,'statusCode' => 401, 'message' => 'Token is Expired', 'data' => ""]);
             }else{
-                return response()->json(['status' => 'Authorization Token not found']);
+                return response()->json(['error' => 1,'statusCode' => 401, 'message' =>'Authorization Token not found', 'data' => ""]);
             }
         }
         return $next($request);
