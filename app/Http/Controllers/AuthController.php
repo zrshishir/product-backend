@@ -17,13 +17,13 @@ class AuthController extends Controller
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 1, 'statusCode' => 400, 'message' => 'The email or password does not match.', 'data' => ""]);
+                return response()->json(['error' => 1, 'statusCode' => 400, 'message' => 'OOps, The email or password does not match.', 'data' => ""]);
             }
         } catch (JWTException $e) {
             return response()->json(['error' => 1, 'statusCode' => 500, 'message' => 'OOps, can not create token. Something went wrong.', 'data' => ""]);
         }
 
-        return response()->json(['error' => 0, 'statusCode' => 200, 'message' => 'Wow, you are logged in.', 'data' => ""]);
+        return response()->json(['error' => 0, 'statusCode' => 200, 'message' => 'Wow, you are logged in.', 'data' => ['token' => $token]]);
     }
 
     public function register(Request $request){
@@ -54,6 +54,4 @@ class AuthController extends Controller
 
             return response()->json(['error' => 0, 'statusCode' => 200, 'message' => "Great, Registration succeeded. You are now logged in.", 'data' => ['token' => $token, 'user' => $user]]);
     }
-
-
 }

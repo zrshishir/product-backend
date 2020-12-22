@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('register', 'App\Http\Controllers\AuthController@register');
-Route::post('login', 'UserController@authenticate');
-Route::get('open', 'DataController@open');
+Route::post('login', 'App\Http\Controllers\AuthController@login');
+
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', 'UserController@getAuthenticatedUser');
