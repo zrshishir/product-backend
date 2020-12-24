@@ -24,6 +24,9 @@
 		- deleting api, it's responss and validation
 		- image uploading and storing on public path
 
+## Attachment
+	- Json file of postman api collection in the root directory named `product backend.postman_collection.json
+
 ## Project setup
 	Project setup details are described below step by step: The front end project for this project is [here](https://github.com/zrshishir/product-frontend). First, follow these steps then front end [project](git@github.com:zrshishir/product-frontend) steps
 		1. Download or clone the project from [Product Backend](git@github.com:zrshishir/product-backend.git). 
@@ -36,64 +39,56 @@
 
 ### screenshots of working procedure details
 	The working procedure is described below with screenshots:
-	1. To install this project you will have node installed. I will describe it using `npm`. You can install this project two ways
+	1. To install this project you will have composer installed. You can install this project two ways
 		- Download the zip file from the repository and extract it on your pc
 
 		- clone the project using git and the command is `git clone git@github.com:zrshishir/product-frontend.git`. 
 
-![git clone](/screenshots/1.png)
+![git clone](/screenshots/terminal_1.png)
 
-	2. Go to the project's root directory and run the command `npm install`
+	2. Go to the project's root directory 
 
-![go to root directory](/screenshots/2.png)
+![git clone](/screenshots/terminal_2.png)
 
-![npm install](/screenshots/3.png)
+	3. run the command `composer update` or `composer install`
 
-	3. Go to the `/src/api` directory and edit the `product-frontend.js`. Assign your domain name with `ROOT_URL`. 
-			`const ROOT_URL = 'your-domain-name/api'`
+![go to root directory](/screenshots/terminal_3.png)
 
-![root url setting](/screenshots/root_url.png)
+	4. Run the command `php artisan migrate`
 
-	4. Go to your root direcotory and run `npm run serve`
+![migration](/screenshots/terminal_4.png)
 
-![run the project](/screenshots/npm-run-serve.png)
+	5. Run the command `php artisan storage:link`
 
-### Some screenshots of the project
-	1. Home page 
+![storage link](/screenshots/terminal_5.png)
 
-![home page](/screenshots/4.png)
+	6. Run the command `php artisan serve` and use this link on the postman url
+![To run the project](/screenshots/terminal_6.png)
 
-	2. Sign up or Registration page
+### Some screenshots of the project postman api: As i use LEMP stack for my local server environment, I have used domain name in the url
 
-![sign up](/screenshots/5.png)
+	1. Registration api and it's responses
 
-![sign up validation page](/screenshots/6.png)
+![Registration](/screenshots/1.png)
 
-	3. Login or Sign in page
+	2. Login api details and it's responses
 
-![sign in page](/screenshots/7.png)
+![Login](/screenshots/2.png)
 
-	4. Registration or login message on home page with log out button and product menu
+	3. Product Data index api details and it's resposnes
 
-![message home page](/screenshots/8.png)
+![getting product](/screenshots/3.png)
 
-	5. Product page
+	4. Product storing api details and it's resposnes
 
-![product page](/screenshots/9.png)
+![Product storing](/screenshots/4.png)
 
-	6. Product creation page
+	5. Product updating api details and it's resposnes
 
-![product creation page](/screenshots/10.png)
+![product updating](/screenshots/5.png)
 
-	7. Product edit page
+	6. Product deleting api details and it's resposnes
 
-![product edit page](/screenshots/11.png)
+![product deleting](/screenshots/6.png)
 
-	8. Product delete page
-
-![product delete](/screenshots/12.png)
-
-	9. Log out message					
-
-![log out message on home page](/screenshots/13.png)
 
