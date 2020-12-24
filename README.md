@@ -54,15 +54,19 @@
 
 ![go to root directory](/screenshots/terminal_3.png)
 
-	4. Run the command `php artisan migrate`
+	3. Database credential set up
+
+![db set up](/screenshots/terminal_7.png)
+
+	5. Run the command `php artisan migrate`
 
 ![migration](/screenshots/terminal_4.png)
 
-	5. Run the command `php artisan storage:link`
+	6. Run the command `php artisan storage:link`
 
 ![storage link](/screenshots/terminal_5.png)
 
-	6. Run the command `php artisan serve` and use this link on the postman url
+	7. Run the command `php artisan serve` and use this link on the postman url
 ![To run the project](/screenshots/terminal_6.png)
 
 ### Some screenshots of the project postman api: As i use LEMP stack for my local server environment, I have used domain name in the url
