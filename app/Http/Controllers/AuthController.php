@@ -14,6 +14,7 @@ class AuthController extends Controller
 {
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
+        $url = url('images') . '/';
 
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
@@ -23,10 +24,11 @@ class AuthController extends Controller
             return response()->json(['error' => 1, 'statusCode' => 500, 'message' => 'OOps, can not create token. Something went wrong.', 'data' => ""]);
         }
 
-        return response()->json(['error' => 0, 'statusCode' => 200, 'message' => 'Wow, you are logged in.', 'data' => ['token' => $token]]);
+        return response()->json(['error' => 0, 'statusCode' => 200, 'message' => 'Wow, you are logged in.', 'data' => ['token' => $token, 'url' => $url]]);
     }
 
     public function register(Request $request){
+        $url = url('images') . '/';
             $validator = Validator::make($request->all(), [
                 'name' => 'required|string|max:255',
                 'email' => 'required|string|email|max:255|unique:users',
@@ -52,6 +54,6 @@ class AuthController extends Controller
 
             $token = JWTAuth::fromUser($user);
 
-            return response()->json(['error' => 0, 'statusCode' => 200, 'message' => "Great, Registration succeeded. You are now logged in.", 'data' => ['token' => $token, 'user' => $user]]);
+            return response()->json(['error' => 0, 'statusCode' => 200, 'message' => "Great, Registration succeeded. You are now logged in.", 'data' => ['token' => $token, 'user' => $user, 'url' => $url]]);
     }
 }

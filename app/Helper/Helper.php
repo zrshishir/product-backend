@@ -51,7 +51,7 @@ class Helper {
     public function responseProcess($errorCode, $statusCode, $msg, $data){
         $responseData['error'] = $errorCode;
         $responseData['statusCode'] = $statusCode;
-        $responseData['errorMsg'] = $msg;
+        $responseData['message'] = $msg;
         $responseData['data'] = $data;
 
         return $responseData;
