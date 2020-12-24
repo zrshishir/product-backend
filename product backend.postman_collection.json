@@ -1,0 +1,1473 @@
+{
+	"info": {
+		"_postman_id": "57e70cd9-6744-497e-b7a4-029318976676",
+		"name": "product backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "shishir",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "admin2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.product-backend.com/api/register",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "registration validation error response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "1234564",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/register",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 04:15:34 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 422,\n    \"message\": \"The name field is required.The password confirmation does not match.\",\n    \"data\": \"\"\n}"
+						},
+						{
+							"name": "registration successful ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shishir",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/register",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 04:27:40 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Great, Registration succeeded. You are now logged in.\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL3JlZ2lzdGVyIiwiaWF0IjoxNjA4NjExMjYwLCJleHAiOjE2MDg2MTQ4NjAsIm5iZiI6MTYwODYxMTI2MCwianRpIjoiY3ROTDIwWHJ4VzlrcXhaOCIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jZPqwo4ruy3glH6EdNKNaBNHCmwHos_mLEgh9U-IEmE\",\n        \"user\": {\n            \"name\": \"shishir\",\n            \"email\": \"admin@gmail.com\",\n            \"updated_at\": \"2020-12-22T04:27:40.000000Z\",\n            \"created_at\": \"2020-12-22T04:27:40.000000Z\",\n            \"id\": 2\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.product-backend.com/api/login",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login response for not matching email or password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin1@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/login",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 04:38:33 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 400,\n    \"message\": \"OOps, The email or password does not match.\",\n    \"data\": \"\"\n}"
+						},
+						{
+							"name": "Successfully logged in",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/login",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 04:40:14 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"message\": \"Wow, you are logged in.\",\n    \"data\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjEyMDE0LCJleHAiOjE2MDg2MTU2MTQsIm5iZiI6MTYwODYxMjAxNCwianRpIjoiaHZST2xpNENlaklTUDQ1WiIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.W0mLSc85HNQ1pDlucP914z3T-my7Uap86-RV2J5GPJM\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "getting product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4ODAwNzkzLCJleHAiOjE2MDg4MDQzOTMsIm5iZiI6MTYwODgwMDc5MywianRpIjoibnl0aUFpTzJhcmpYa3ZIdCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oyPiCDSrq1hBg_k91qoNiEojnCjVZO1nZRNZ7Ror3bs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "local.product-backend.com/api/product",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getting product list with user info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL3JlZ2lzdGVyIiwiaWF0IjoxNjA4NjE3MDM1LCJleHAiOjE2MDg2MjA2MzUsIm5iZiI6MTYwODYxNzAzNSwianRpIjoiRWJseUlTUENydHNSOHI4USIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jGdKmFSs4mSSOhxzGTNLlmXvQzSAQTRgVIPMhb8L0sU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "local.product-backend.com/api/product",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 06:18:26 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"errorMsg\": \"Datas...\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"title\": \"shishir\",\n            \"description\": \"shishir\",\n            \"price\": 100,\n            \"image\": \"1608617739.svg\",\n            \"created_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"updated_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"shishir\",\n                \"email\": \"admin@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2020-12-22T06:03:55.000000Z\",\n                \"updated_at\": \"2020-12-22T06:03:55.000000Z\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "getting product with no content response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjEyMDE0LCJleHAiOjE2MDg2MTU2MTQsIm5iZiI6MTYwODYxMjAxNCwianRpIjoiaHZST2xpNENlaklTUDQ1WiIsInN1YiI6MiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.W0mLSc85HNQ1pDlucP914z3T-my7Uap86-RV2J5GPJM",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "local.product-backend.com/api/product",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 05:17:23 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 204,\n    \"errorMsg\": \"No Content\",\n    \"data\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "storing product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4ODAwNzkzLCJleHAiOjE2MDg4MDQzOTMsIm5iZiI6MTYwODgwMDc5MywianRpIjoibnl0aUFpTzJhcmpYa3ZIdCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oyPiCDSrq1hBg_k91qoNiEojnCjVZO1nZRNZ7Ror3bs"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "921lsjdlf",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "wdskj",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "data:image/png;base64, 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",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.product-backend.com/api/product",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getting division",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM1ZDFiNWM2NDZkMWVhYTdkNTI4NjBmMjI5Zjg4YTM4OTkwZWFkZDM2ODFiZTJkYjM4N2Y4ZWU5OTdmZTNiNDNkZmM2ZTdhYTQwMzkxN2ZkIn0.eyJhdWQiOiIxIiwianRpIjoiMzVkMWI1YzY0NmQxZWFhN2Q1Mjg2MGYyMjlmODhhMzg5OTBlYWRkMzY4MWJlMmRiMzg3ZjhlZTk5N2ZlM2I0M2RmYzZlN2FhNDAzOTE3ZmQiLCJpYXQiOjE1NzkwNzEwNDEsIm5iZiI6MTU3OTA3MTA0MSwiZXhwIjoxNjEwNjkzNDQxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ByD-8-Iw7R_EoxN_9M0DMM1EzOmMB_RSZnSY0V6R5CVbNFlaeMZxp8V787P6Yu6r3EnMPUvlHjsugoLQkvHgAcnhKgp8NuW_eppc2mLyvXJzblW1yIv5xO7wbB-aAFOfe-4acYDfBB8XQN1XhfnUes_1cljpActg-rO4n0kUUJSY28-sClSGovn2cvlQT129lSiLkNiC8M9Nr58eERbcTUEszCkdO37yRMbloPMU8HD5Uy-v1_oxvElkQhB9jKLgSR3KL_KUugm86knSmmSZhucSHC4s3i22XIwlqnM4gSvAPd7igMuJL4u0kR0IlrmzCURZKi6EhyJS62OjtE1knNkdViy3b4u8lyw9XZJeF3YKKV6vyBWi_sXm1D0qvX4rt2NdmuFngluJ5EnaBQMKbxyrc6W4Yl0xpEZiYRjjzEH0VCXNK6FwD_G8P72rYKbA3z6SvdGIVJzjxzy36BuRTsXMTm49ApCEC9rcAdoYXOj3NQmF1NsgYMDtB7TgehY2-RUDpl_2Syqq3v3fU4CZQYRLy8aqCAxoSip4uzoqcXHQPMoWia8DV2DulffQqeL-m3AOA-M26Pz4ovqYg0PtGp3DY864jhDzUakVi36F1eQspGzQNakWUb0hRv_y-WbNOwqjTYROMfloOfkBesCkFnrD-6P7qjxGYleS2jUULHo",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "local.shadhin.com/api/shadhin/division",
+									"host": [
+										"local",
+										"shadhin",
+										"com"
+									],
+									"path": [
+										"api",
+										"shadhin",
+										"division"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jan 2020 06:52:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"errorMsg\": \"Divsions.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Barisal\",\n            \"bangla_name\": \"বরিশাল\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Chittagong\",\n            \"bangla_name\": \"চট্টগ্রাম\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dhaka\",\n            \"bangla_name\": \"ঢাকা\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Khulna\",\n            \"bangla_name\": \"খুলনা\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Rajshahi\",\n            \"bangla_name\": \"রাজশাহী\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Rangpur\",\n            \"bangla_name\": \"রংপুর\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Sylhet\",\n            \"bangla_name\": \"সিলেট\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Mymenshahi\",\n            \"bangla_name\": \"ময়মনসিংহ\",\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "updating/storing division",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjM1ZDFiNWM2NDZkMWVhYTdkNTI4NjBmMjI5Zjg4YTM4OTkwZWFkZDM2ODFiZTJkYjM4N2Y4ZWU5OTdmZTNiNDNkZmM2ZTdhYTQwMzkxN2ZkIn0.eyJhdWQiOiIxIiwianRpIjoiMzVkMWI1YzY0NmQxZWFhN2Q1Mjg2MGYyMjlmODhhMzg5OTBlYWRkMzY4MWJlMmRiMzg3ZjhlZTk5N2ZlM2I0M2RmYzZlN2FhNDAzOTE3ZmQiLCJpYXQiOjE1NzkwNzEwNDEsIm5iZiI6MTU3OTA3MTA0MSwiZXhwIjoxNjEwNjkzNDQxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.ByD-8-Iw7R_EoxN_9M0DMM1EzOmMB_RSZnSY0V6R5CVbNFlaeMZxp8V787P6Yu6r3EnMPUvlHjsugoLQkvHgAcnhKgp8NuW_eppc2mLyvXJzblW1yIv5xO7wbB-aAFOfe-4acYDfBB8XQN1XhfnUes_1cljpActg-rO4n0kUUJSY28-sClSGovn2cvlQT129lSiLkNiC8M9Nr58eERbcTUEszCkdO37yRMbloPMU8HD5Uy-v1_oxvElkQhB9jKLgSR3KL_KUugm86knSmmSZhucSHC4s3i22XIwlqnM4gSvAPd7igMuJL4u0kR0IlrmzCURZKi6EhyJS62OjtE1knNkdViy3b4u8lyw9XZJeF3YKKV6vyBWi_sXm1D0qvX4rt2NdmuFngluJ5EnaBQMKbxyrc6W4Yl0xpEZiYRjjzEH0VCXNK6FwD_G8P72rYKbA3z6SvdGIVJzjxzy36BuRTsXMTm49ApCEC9rcAdoYXOj3NQmF1NsgYMDtB7TgehY2-RUDpl_2Syqq3v3fU4CZQYRLy8aqCAxoSip4uzoqcXHQPMoWia8DV2DulffQqeL-m3AOA-M26Pz4ovqYg0PtGp3DY864jhDzUakVi36F1eQspGzQNakWUb0hRv_y-WbNOwqjTYROMfloOfkBesCkFnrD-6P7qjxGYleS2jUULHo"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shishir",
+											"type": "text"
+										},
+										{
+											"key": "bangla_name",
+											"value": "shishir",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "19",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "local.shadhin.com/api/shadhin/division",
+									"host": [
+										"local",
+										"shadhin",
+										"com"
+									],
+									"path": [
+										"api",
+										"shadhin",
+										"division"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 15 Jan 2020 08:51:51 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 201,\n    \"errorMsg\": \"Division has been saved\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Barisal\",\n            \"bangla_name\": \"বরিশাল\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Chittagong\",\n            \"bangla_name\": \"চট্টগ্রাম\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Dhaka\",\n            \"bangla_name\": \"ঢাকা\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Khulna\",\n            \"bangla_name\": \"খুলনা\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Rajshahi\",\n            \"bangla_name\": \"রাজশাহী\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Rangpur\",\n            \"bangla_name\": \"রংপুর\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Sylhet\",\n            \"bangla_name\": \"সিলেট\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Mymenshahi\",\n            \"bangla_name\": \"ময়মনসিংহ\",\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"shishir\",\n            \"bangla_name\": \"shishir\",\n            \"created_at\": \"2020-01-15 14:51:51\",\n            \"updated_at\": \"2020-01-15 14:51:51\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "updating product.",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4ODAwNzkzLCJleHAiOjE2MDg4MDQzOTMsIm5iZiI6MTYwODgwMDc5MywianRpIjoibnl0aUFpTzJhcmpYa3ZIdCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oyPiCDSrq1hBg_k91qoNiEojnCjVZO1nZRNZ7Ror3bs"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "shishir1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "shishir1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "data:image/png;base64, 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",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "local.product-backend.com/api/product",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updating product response if there is no update for image ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjIwNzQ3LCJleHAiOjE2MDg2MjQzNDcsIm5iZiI6MTYwODYyMDc0NywianRpIjoiR1ZSNTFkckZJNlRpdXR2VCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sj4PDY7TbcQqi-vefpyPIYOTt9g6jxFlD8DrlIxjsk0"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "1608617739.svg",
+											"type": "text"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 07:06:08 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 201,\n    \"errorMsg\": \"Data has been saved.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"title\": \"shishir1\",\n            \"description\": \"shishir1\",\n            \"price\": 100,\n            \"image\": \"1608617739.svg\",\n            \"created_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"updated_at\": \"2020-12-22T07:06:08.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"shishir\",\n                \"email\": \"admin@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2020-12-22T06:03:55.000000Z\",\n                \"updated_at\": \"2020-12-22T06:03:55.000000Z\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "updating product response if there is an image to update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjIwNzQ3LCJleHAiOjE2MDg2MjQzNDcsIm5iZiI6MTYwODYyMDc0NywianRpIjoiR1ZSNTFkckZJNlRpdXR2VCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sj4PDY7TbcQqi-vefpyPIYOTt9g6jxFlD8DrlIxjsk0"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "total_return.svg"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 07:07:03 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 201,\n    \"errorMsg\": \"Data has been saved.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"title\": \"shishir1\",\n            \"description\": \"shishir1\",\n            \"price\": 100,\n            \"image\": \"1608620823.svg\",\n            \"created_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"updated_at\": \"2020-12-22T07:07:03.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"shishir\",\n                \"email\": \"admin@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2020-12-22T06:03:55.000000Z\",\n                \"updated_at\": \"2020-12-22T06:03:55.000000Z\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "updating product. if some one doen not input a proper image file while updating then the response will show",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL3JlZ2lzdGVyIiwiaWF0IjoxNjA4NjE3MDM1LCJleHAiOjE2MDg2MjA2MzUsIm5iZiI6MTYwODYxNzAzNSwianRpIjoiRWJseUlTUENydHNSOHI4USIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.jGdKmFSs4mSSOhxzGTNLlmXvQzSAQTRgVIPMhb8L0sU"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "shishir1",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "10294_1598763573.1695.pdf"
+										},
+										{
+											"key": "id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 06:47:34 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 422,\n    \"errorMsg\": \"The image field file should be an image of svg, jpeg, png, jpg and gif\",\n    \"data\": \"\"\n}"
+						}
+					]
+				},
+				{
+					"name": "deleting product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4ODAwNzkzLCJleHAiOjE2MDg4MDQzOTMsIm5iZiI6MTYwODgwMDc5MywianRpIjoibnl0aUFpTzJhcmpYa3ZIdCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.oyPiCDSrq1hBg_k91qoNiEojnCjVZO1nZRNZ7Ror3bs"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "shishirdq",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "bangla_name",
+									"value": "shishirqw",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "9",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "local.product-backend.com/api/product/9",
+							"host": [
+								"local",
+								"product-backend",
+								"com"
+							],
+							"path": [
+								"api",
+								"product",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "deleting product response if some one input a non numeric id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjIwNzQ3LCJleHAiOjE2MDg2MjQzNDcsIm5iZiI6MTYwODYyMDc0NywianRpIjoiR1ZSNTFkckZJNlRpdXR2VCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sj4PDY7TbcQqi-vefpyPIYOTt9g6jxFlD8DrlIxjsk0"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shishirdq",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "bangla_name",
+											"value": "shishirqw",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "9",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product/j",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product",
+										"j"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 07:13:28 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 403,\n    \"errorMsg\": \"The id should be a number.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"title\": \"shishir1\",\n            \"description\": \"shishir1\",\n            \"price\": 100,\n            \"image\": \"1608620823.svg\",\n            \"created_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"updated_at\": \"2020-12-22T07:07:03.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"shishir\",\n                \"email\": \"admin@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2020-12-22T06:03:55.000000Z\",\n                \"updated_at\": \"2020-12-22T06:03:55.000000Z\"\n            }\n        }\n    ]\n}"
+						},
+						{
+							"name": "deleting product response successfully",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjIwNzQ3LCJleHAiOjE2MDg2MjQzNDcsIm5iZiI6MTYwODYyMDc0NywianRpIjoiR1ZSNTFkckZJNlRpdXR2VCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sj4PDY7TbcQqi-vefpyPIYOTt9g6jxFlD8DrlIxjsk0"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shishirdq",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "bangla_name",
+											"value": "shishirqw",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "9",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product/1",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 07:14:36 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 0,\n    \"statusCode\": 200,\n    \"errorMsg\": \"Data has been deleted successfully.\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "deleting division response if non exist id has been provided",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbC5wcm9kdWN0LWJhY2tlbmQuY29tXC9hcGlcL2xvZ2luIiwiaWF0IjoxNjA4NjIwNzQ3LCJleHAiOjE2MDg2MjQzNDcsIm5iZiI6MTYwODYyMDc0NywianRpIjoiR1ZSNTFkckZJNlRpdXR2VCIsInN1YiI6MSwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.Sj4PDY7TbcQqi-vefpyPIYOTt9g6jxFlD8DrlIxjsk0"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "shishirdq",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "bangla_name",
+											"value": "shishirqw",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "9",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "local.product-backend.com/api/product/10",
+									"host": [
+										"local",
+										"product-backend",
+										"com"
+									],
+									"path": [
+										"api",
+										"product",
+										"10"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 22 Dec 2020 07:10:29 GMT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": 1,\n    \"statusCode\": 400,\n    \"errorMsg\": \"Please give a valid id.\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"title\": \"shishir1\",\n            \"description\": \"shishir1\",\n            \"price\": 100,\n            \"image\": \"1608620823.svg\",\n            \"created_at\": \"2020-12-22T06:15:39.000000Z\",\n            \"updated_at\": \"2020-12-22T07:07:03.000000Z\",\n            \"user\": {\n                \"id\": 1,\n                \"name\": \"shishir\",\n                \"email\": \"admin@gmail.com\",\n                \"email_verified_at\": null,\n                \"created_at\": \"2020-12-22T06:03:55.000000Z\",\n                \"updated_at\": \"2020-12-22T06:03:55.000000Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

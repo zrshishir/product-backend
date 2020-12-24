@@ -1,64 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# product front end crud project
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Tech Specifications
+	- "php": "^7.3|^8.0".
+    - "laravel/framework": "^8.12".
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Features
+	1. JWT Token
+		- token validation checking and responses through middleware
+	2. Database migration
+	3. Authentication
+		- Validation for registration 
+		- all possible responses 
+		- jwt token generation
+		- Validation for login
+		- all possible responses for invalid login
+		- jwt token generation
+	4. Product Crud
+		- index functionality for getting all data
+		- prepare all responses for getting data
+		- storing api and it's responses and validations
+		- updating api, it's responses and validation
+		- deleting api, it's responss and validation
+		- image uploading and storing on public path
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Project setup
+	Project setup details are described below step by step: The front end project for this project is [here](https://github.com/zrshishir/product-frontend). First, follow these steps then front end [project](git@github.com:zrshishir/product-frontend) steps
+		1. Download or clone the project from [Product Backend](git@github.com:zrshishir/product-backend.git). 
+		2. Go to the project's root directory and run the command `composer install` or `composer update`
+		3. After successfully composer updation set up your database credentials on .env file
+		4. Run the command `php artisan migrate`
+		5. Run the command `php artisan storage:link`
+		6. If you are using LEMP stack then follow proper steps [here](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04) and if you are using other then run the command `php artisan serve` to get the domain name or service url that will have to be assigned in the [frontend code](git@github.com:zrshishir/product-frontend) `/src/api/product-frontend.js` ROOT_URL const.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### screenshots of working procedure details
+	The working procedure is described below with screenshots:
+	1. To install this project you will have node installed. I will describe it using `npm`. You can install this project two ways
+		- Download the zip file from the repository and extract it on your pc
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+		- clone the project using git and the command is `git clone git@github.com:zrshishir/product-frontend.git`. 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![git clone](/screenshots/1.png)
 
-## Laravel Sponsors
+	2. Go to the project's root directory and run the command `npm install`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![go to root directory](/screenshots/2.png)
 
-### Premium Partners
+![npm install](/screenshots/3.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+	3. Go to the `/src/api` directory and edit the `product-frontend.js`. Assign your domain name with `ROOT_URL`. 
+			`const ROOT_URL = 'your-domain-name/api'`
 
-## Contributing
+![root url setting](/screenshots/root_url.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+	4. Go to your root direcotory and run `npm run serve`
 
-## Code of Conduct
+![run the project](/screenshots/npm-run-serve.png)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Some screenshots of the project
+	1. Home page 
 
-## Security Vulnerabilities
+![home page](/screenshots/4.png)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+	2. Sign up or Registration page
 
-## License
+![sign up](/screenshots/5.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# product-backend
-# product-backend
+![sign up validation page](/screenshots/6.png)
+
+	3. Login or Sign in page
+
+![sign in page](/screenshots/7.png)
+
+	4. Registration or login message on home page with log out button and product menu
+
+![message home page](/screenshots/8.png)
+
+	5. Product page
+
+![product page](/screenshots/9.png)
+
+	6. Product creation page
+
+![product creation page](/screenshots/10.png)
+
+	7. Product edit page
+
+![product edit page](/screenshots/11.png)
+
+	8. Product delete page
+
+![product delete](/screenshots/12.png)
+
+	9. Log out message					
+
+![log out message on home page](/screenshots/13.png)
+
